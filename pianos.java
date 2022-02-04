@@ -18,23 +18,12 @@ public class pianos {
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
 	
-
-	/**
-	 * Create the application.
-	 * @throws MidiUnavailableException 
-	 */
 	public pianos() throws MidiUnavailableException {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 * @throws MidiUnavailableException 
-	 */
+	
 	private void initialize() throws MidiUnavailableException {
 		Synthesizer synth = MidiSystem.getSynthesizer();
 		synth.open();
