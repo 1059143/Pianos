@@ -1,4 +1,4 @@
-// package piano_s;
+package piano_s;
 
 import java.awt.EventQueue;
 import javax.sound.midi.*;
@@ -18,20 +18,31 @@ public class pianos {
 
 	private JFrame frame;
 
+	/**
+	 * Launch the application.
+	 */
 	
+
+	/**
+	 * Create the application.
+	 * @throws MidiUnavailableException 
+	 */
 	public pianos() throws MidiUnavailableException {
 		initialize();
 	}
 
-	
-	private void initialize() throws MidiUnavailableException {
+	/**
+	 * Initialize the contents of the frame.
+	 * @throws MidiUnavailableException 
+	 */
+	private void initialize() throws MidiUnavailableException  {
 		Synthesizer synth = MidiSystem.getSynthesizer();
 		synth.open();
 		final MidiChannel[] mc = synth.getChannels();
 		Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
 		synth.loadInstrument(instr[90]);
 		frame = new JFrame();
-		frame.setBounds(100, 100, 845, 671);
+		frame.setBounds(100, 100, 1244, 733);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -171,6 +182,42 @@ public class pianos {
 				mc[5].noteOn(70, 600);
 			}
 		});
+		
+		JButton btnC_1 = new JButton("C");
+		btnC_1.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		btnC_1.setBackground(Color.WHITE);
+		btnC_1.setBounds(786, 280, 97, 287);
+		frame.getContentPane().add(btnC_1);
+		btnC_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mc[5].noteOn(72, 600);
+			}
+		});
+		
+		JButton btnD_1 = new JButton("D");
+		btnD_1.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		btnD_1.setBackground(Color.WHITE);
+		btnD_1.setBounds(893, 280, 97, 287);
+		frame.getContentPane().add(btnD_1);
+		btnD_1.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				mc[5].noteOn(74, 600);
+			}
+		});
+		
+		JButton btnCsharp_1 = new JButton("C#/D(flat)");
+		btnCsharp_1.setForeground(Color.WHITE);
+		btnCsharp_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnCsharp_1.setBackground(Color.BLACK);
+		btnCsharp_1.setBounds(827, 57, 116, 212);
+		frame.getContentPane().add(btnCsharp_1);
+		btnCsharp_1.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				mc[5].noteOn(73, 600);
+			}
+		});
+		
+		
 		
 		
 		frame.setVisible(true);
