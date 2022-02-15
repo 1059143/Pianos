@@ -1,8 +1,7 @@
-package piano_s;
 
 import java.awt.EventQueue;
 import javax.sound.midi.*;
-
+import javax.swing.*;
 
 import javax.sound.sampled.*;
 
@@ -11,9 +10,11 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.ActionEvent;
 
-public class pianos {
+public class pianos implements KeyListener {
 	
 
 	private JFrame frame;
@@ -27,7 +28,7 @@ public class pianos {
 	 * Create the application.
 	 * @throws MidiUnavailableException 
 	 */
-	public pianos() throws MidiUnavailableException {
+	public pianos() throws MidiUnavailableException  {
 		initialize();
 	}
 
@@ -56,6 +57,18 @@ public class pianos {
 				mc[5].noteOn(60,600);
 			}
 		});
+		btnC.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
+		
+		Action aa = new AbstractAction()
+		   {
+				@Override
+			  public void actionPerformed(ActionEvent e)
+			   {
+				  mc[5].noteOn(60, 600);                      
+			   }
+		   };			
+		btnC.getActionMap().put("C", aa);
+		btnC.addActionListener(aa);
 		
 		JButton btnD = new JButton("D");
 		btnD.addActionListener(new ActionListener() {
@@ -67,6 +80,18 @@ public class pianos {
 		btnD.setBackground(Color.WHITE);
 		btnD.setBounds(144, 280, 97, 287);
 		frame.getContentPane().add(btnD);
+		btnD.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_D, 0), "D");
+		
+		Action ab = new AbstractAction()
+		   {
+				@Override
+			  public void actionPerformed(ActionEvent e)
+			   {
+				  mc[5].noteOn(62, 600);                      
+			   }
+		   };			
+		btnD.getActionMap().put("D", ab);
+		btnD.addActionListener(ab);
 		
 		JButton btnE = new JButton("E");
 		btnE.setFont(new Font("Tahoma", Font.PLAIN, 26));
@@ -123,6 +148,19 @@ public class pianos {
 		});
 		btnCsharp.setBounds(79, 57, 116, 212);
 		frame.getContentPane().add(btnCsharp);
+		btnCsharp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_1, 0), "1");
+		
+		Action ac = new AbstractAction()
+		   {
+				@Override
+			  public void actionPerformed(ActionEvent e)
+			   {
+				  mc[5].noteOn(61, 600);                      
+			   }
+		   };			
+		btnCsharp.getActionMap().put("1", ac);
+		btnCsharp.addActionListener(ac);
+		
 		
 		JButton btnDsharp = new JButton("D#/E(flat)");
 		btnDsharp.setForeground(Color.WHITE);
@@ -135,6 +173,18 @@ public class pianos {
 				mc[5].noteOn(63, 600);
 			}
 		});
+		btnDsharp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_2, 0), "2");
+		
+		Action ad = new AbstractAction()
+		   {
+				@Override
+			  public void actionPerformed(ActionEvent e)
+			   {
+				  mc[5].noteOn(63, 600);                      
+			   }
+		   };			
+		btnDsharp.getActionMap().put("2", ad);
+		btnDsharp.addActionListener(ad);
 		
 		JButton btnFsharp = new JButton("F#/G(flat)");
 		btnFsharp.setForeground(Color.WHITE);
@@ -159,6 +209,7 @@ public class pianos {
 				mc[5].noteOn(68, 600);
 			}
 		});
+		
 		
 		JButton btnB = new JButton("B");
 		btnB.setFont(new Font("Tahoma", Font.PLAIN, 26));
@@ -194,6 +245,7 @@ public class pianos {
 			}
 		});
 		
+		
 		JButton btnD_1 = new JButton("D");
 		btnD_1.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		btnD_1.setBackground(Color.WHITE);
@@ -217,10 +269,40 @@ public class pianos {
 			}
 		});
 		
-		
-		
-		
 		frame.setVisible(true);
 		
 	}
+	
+public JButton Button(JButton btnName, String btnText, int size, int x1, int x2, int note, MidiChannel[] mc) {
+	btnName = new JButton(btnText);
+	btnName.setForeground(Color.WHITE);
+	btnName.setFont(new Font("Tahoma", Font.PLAIN, size));
+	btnName.setBounds(x1, x2, 97, 287);
+
+	frame.getContentPane().add(btnName);
+	btnName.addActionListener(new ActionListener () {
+		public void actionPerformed(ActionEvent e) {
+			mc[5].noteOn(note, 600);
+		}
+	});
+	return btnName;
+}
+
+@Override
+public void keyTyped(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void keyPressed(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void keyReleased(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
 }
