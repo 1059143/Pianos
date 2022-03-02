@@ -15,7 +15,12 @@ public class mKey extends Key {
 		
 		setBackground(Color.BLACK);
 		setForeground(Color.WHITE);
-		setWIDTH(126);
+		if(i % 7 != 2) {
+			setWIDTH(126);
+		} else {
+			setWIDTH(177);
+		}
+		
 		setStart(79);
 		setBounds(getLeft(i), 57, 116, 212);
 		
