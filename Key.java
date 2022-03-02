@@ -13,8 +13,12 @@ public class Key extends JButton {
 	private  int WIDTH = 107;
 	private int startPos = 37;
 	
+	
+	private String[] noteName =  {"C","D","E","F","G","A","B"};
+	
 	public Key(JFrame KeyBoard, int i) {
 		this.frame = KeyBoard;
+		int noteRemainder = i % 7;
 //		frame.setBounds(100, 100, 1244, 733);
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.getContentPane().setLayout(null);
@@ -27,6 +31,17 @@ public class Key extends JButton {
 		this.frame.getContentPane().add(this);
 		this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
 		this.frame.setVisible(true);
+		
+		switch(noteRemainder) {
+		case 0:
+			this.setText("C");
+			break;
+		case 1:
+			this.setText("D");
+			break;
+		
+		
+		}
 	}
 //		Action aa = new AbstractAction()
 //		   {

@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class KeyBoard extends JFrame {
 	
-	private Key[] listOfMajorKeys = new Key[6];
-	private mKey[] listOfMinorKeys = new mKey[6];
+	private Key[] listOfMajorKeys = new Key[7];
+	private mKey[] listOfMinorKeys = new mKey[7];
 	
 	public KeyBoard() {
 		this.setBounds(100, 100, 1244, 733);
