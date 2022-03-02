@@ -14,7 +14,7 @@ public class Key extends JButton {
 	private int startPos = 37;
 	
 	
-	private String[] noteName =  {"C","D","E","F","G","A","B"};
+//	private String[] noteName =  {"C","D","E","F","G","A","B"};
 	
 	public Key(JFrame KeyBoard, int i) {
 		this.frame = KeyBoard;
@@ -33,14 +33,27 @@ public class Key extends JButton {
 		this.frame.setVisible(true);
 		
 		switch(noteRemainder) {
-		case 0:
-			this.setText("C");
-			break;
-		case 1:
-			this.setText("D");
-			break;
-		
-		
+			case 0:
+				this.setText("C");
+				break;
+			case 1:
+				this.setText("D");
+				break;
+			case 2:
+				this.setText("E");
+				break;
+			case 3:
+				this.setText("F");
+				break;
+			case 4:
+				this.setText("G");
+				break;
+			case 5:
+				this.setText("A");
+				break;
+			case 6:
+				this.setText("B");
+				break;
 		}
 	}
 //		Action aa = new AbstractAction()
