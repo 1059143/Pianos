@@ -10,7 +10,8 @@ public class Key extends JButton {
 	private boolean isMinor;
 	private JFrame frame;
 	
-	private final int WIDTH = 107;
+	private  int WIDTH = 107;
+	private int startPos = 37;
 	
 	public Key(JFrame KeyBoard, int i) {
 		this.frame = KeyBoard;
@@ -39,7 +40,15 @@ public class Key extends JButton {
 //		this.addActionListener(aa);
 	
 	public int getLeft(int i) {
-		return 37 + i * this.WIDTH; //TODO: stating possition should come from Piano
+		return this.startPos + i * this.WIDTH; //TODO: stating possition should come from Piano
+	}
+
+	public void setStart(int x) {
+		this.startPos = x;
+	}
+	
+	public void setWIDTH(int x) {
+		this.WIDTH = x;
 	}
 	
 }
