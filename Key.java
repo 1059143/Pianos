@@ -14,7 +14,8 @@ public class Key extends JButton {
 	private int startPos = 37;
 	
 	
-//	private String[] noteName =  {"C","D","E","F","G","A","B"};
+	
+	private String[] noteName =  {"C","D","E","F","G","A","B"};
 	
 	public Key(JFrame KeyBoard, int i) {
 		this.frame = KeyBoard;
@@ -26,7 +27,7 @@ public class Key extends JButton {
 		
 		
 		this.setBackground(backGround);
-		this.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		setTheFont(26);
 		this.setBounds(getLeft(i), 280, 97, 287);
 		this.frame.getContentPane().add(this);
 		this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
@@ -34,25 +35,25 @@ public class Key extends JButton {
 		
 		switch(noteRemainder) {
 			case 0:
-				this.setText("C");
+				this.setText(noteName[noteRemainder]);
 				break;
 			case 1:
-				this.setText("D");
+				this.setText(noteName[noteRemainder]);
 				break;
 			case 2:
-				this.setText("E");
+				this.setText(noteName[noteRemainder]);
 				break;
 			case 3:
-				this.setText("F");
+				this.setText(noteName[noteRemainder]);
 				break;
 			case 4:
-				this.setText("G");
+				this.setText(noteName[noteRemainder]);
 				break;
 			case 5:
-				this.setText("A");
+				this.setText(noteName[noteRemainder]);
 				break;
 			case 6:
-				this.setText("B");
+				this.setText(noteName[noteRemainder]);
 				break;
 		}
 	}
@@ -78,5 +79,8 @@ public class Key extends JButton {
 	public void setWIDTH(int x) {
 		this.WIDTH = x;
 	}
-	
+
+	public void setTheFont(int x) {
+		this.setFont(new Font("Tahoma", Font.PLAIN, x));
+	}
 }

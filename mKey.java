@@ -5,14 +5,19 @@ public class mKey extends Key {
 	
 	private JFrame frame;
 	
+	private String[] noteName = {"C#/D(flat)", "D#/E(flat)", "F#/G(flat)", "G#/A(flat)", "A#/B(flat)"};
 	
 	public mKey(JFrame KeyBoard, int i) {
 		
 		
 		super(KeyBoard, i);
 		
+		int noteRemainder = i % 5;
+		setTheFont(13);
 		setBackground(Color.BLACK);
 		setForeground(Color.WHITE);
+		
+		
 		if(i % 7 != 2 && i % 7 != 0) {
 			setWIDTH(126);
 		} else {
@@ -21,6 +26,27 @@ public class mKey extends Key {
 		
 		setStart(79);
 		setBounds(getLeft(i), 57, 116, 212);
+
+		switch(noteRemainder) {
+			case 0:
+				this.setText(this.noteName[noteRemainder]);
+				break;
+			case 1:
+				this.setText(this.noteName[noteRemainder]);
+				break;
+			case 2:
+				this.setText(this.noteName[noteRemainder]);
+				break;
+			case 3: 
+				this.setText(this.noteName[noteRemainder]);
+				break;
+			case 4:
+				this.setText(this.noteName[noteRemainder]);
+				break;
+			case 5:
+				this.setText(this.noteName[noteRemainder]);
+				break;
+		}
 		
 		
 		
