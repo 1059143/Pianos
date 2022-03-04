@@ -19,7 +19,7 @@ public class Key extends JButton {
 	
 	public Key(JFrame KeyBoard, int i) {
 		this.frame = KeyBoard;
-		int noteRemainder = i % 7;
+		int noteRemainder = i % this.noteName.length;
 //		frame.setBounds(100, 100, 1244, 733);
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.getContentPane().setLayout(null);

@@ -12,16 +12,18 @@ public class mKey extends Key {
 		
 		super(KeyBoard, i);
 		
-		int noteRemainder = i % 5;
+		int noteRemainder = i % this.noteName.length;
 		setTheFont(13);
 		setBackground(Color.BLACK);
 		setForeground(Color.WHITE);
 		
 		
-		if(i % 7 != 2 && i % 7 != 0) {
+		if(noteRemainder == 2) {
+			setWIDTH(167);
+		} else if(noteRemainder > 2) {
 			setWIDTH(126);
 		} else {
-			setWIDTH(177);
+			setWIDTH(126);
 		}
 		
 		setStart(79);
