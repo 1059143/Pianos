@@ -19,12 +19,10 @@ public class mKey extends Key {
 		
 		
 		if(noteRemainder == 2) {
-			setWIDTH(167);
-		} else if(noteRemainder > 2) {
-			setWIDTH(126);
+			setWIDTH(177);
 		} else {
 			setWIDTH(126);
-		}
+		} 
 		
 		setStart(79);
 		setBounds(getLeft(i), 57, 116, 212);

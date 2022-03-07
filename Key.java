@@ -69,7 +69,11 @@ public class Key extends JButton {
 //		this.addActionListener(aa);
 	
 	public int getLeft(int i) {
+		if(i > 2) {
+			return this.startPos + i * this.WIDTH;
+		}
 		return this.startPos + i * this.WIDTH; //TODO: stating possition should come from Piano
+		
 	}
 
 	public void setStart(int x) {
