@@ -13,19 +13,23 @@ public class mKey extends Key {
 		super(KeyBoard, i);
 		
 		int noteRemainder = i % this.noteName.length;
+		
 		setTheFont(13);
 		setBackground(Color.BLACK);
 		setForeground(Color.WHITE);
 		
 		
-		if(noteRemainder == 2) {
-			setWIDTH(177);
-		} else {
-			setWIDTH(126);
-		} 
+		setWIDTH(127);
 		
-		setStart(79);
-		setBounds(getLeft(i), 57, 116, 212);
+		
+//		if(noteRemainder == 2) {
+//			setWIDTH(177);
+//		} else {
+//			setWIDTH(127);
+//		} 
+		
+//		setStart(79);
+		setBounds(getLeft(i, true), 57, 116, 212);
 
 		switch(noteRemainder) {
 			case 0:

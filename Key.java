@@ -15,6 +15,7 @@ public class Key extends JButton {
 	
 	
 	
+	
 	private String[] noteName =  {"C","D","E","F","G","A","B"};
 	
 	public Key(JFrame KeyBoard, int i) {
@@ -24,11 +25,9 @@ public class Key extends JButton {
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.getContentPane().setLayout(null);
 		this.backGround = Color.white;
-		
-		
 		this.setBackground(backGround);
 		setTheFont(26);
-		this.setBounds(getLeft(i), 280, 97, 287);
+		this.setBounds(getLeft(i, false), 280, 97, 287);
 		this.frame.getContentPane().add(this);
 		this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
 		this.frame.setVisible(true);
@@ -68,17 +67,26 @@ public class Key extends JButton {
 //		this.getActionMap().put("C", aa);
 //		this.addActionListener(aa);
 	
-	public int getLeft(int i) {
-		if(i > 2) {
+	public int getLeft(int i, boolean isMinor) {
+		if(!isMinor) {
 			return this.startPos + i * this.WIDTH;
+			
+			
+			
+		} else if(isMinor) {
+			this.startPos = 79;
+			if(i % 5 > 1) {
+				return this.startPos + (i-1) * this.WIDTH + 177;
+			} else { 
+				return this.startPos + i * this.WIDTH;
+			}
+			
 		}
-		return this.startPos + i * this.WIDTH; //TODO: stating possition should come from Piano
+		return 0;
 		
 	}
 
-	public void setStart(int x) {
-		this.startPos = x;
-	}
+	
 	
 	public void setWIDTH(int x) {
 		this.WIDTH = x;
