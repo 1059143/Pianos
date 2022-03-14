@@ -9,10 +9,8 @@ public class Key extends JButton {
 	private Color backGround, foreGround;
 	private boolean isMinor;
 	private JFrame frame;
-	
 	private  int WIDTH = 107;
 	private int startPos = 37;
-	
 	
 	
 	
