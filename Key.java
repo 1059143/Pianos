@@ -1,7 +1,9 @@
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
+import javax.sound.midi.*;
 import javax.swing.*;
 
 public class Key extends JButton {
@@ -16,7 +18,7 @@ public class Key extends JButton {
 	
 	private String[] noteName =  {"C","D","E","F","G","A","B"};
 	
-	public Key(JFrame KeyBoard, int i) {
+	public Key(JFrame KeyBoard, int i)  {
 		this.frame = KeyBoard;
 		int noteRemainder = i % this.noteName.length;
 //		frame.setBounds(100, 100, 1244, 733);
@@ -29,6 +31,14 @@ public class Key extends JButton {
 		this.frame.getContentPane().add(this);
 		this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
 		this.frame.setVisible(true);
+		this.addActionListener(e -> {
+			try {
+				selectionButtonPressed(e);
+			} catch (MidiUnavailableException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		
 		switch(noteRemainder) {
 			case 0:
@@ -84,6 +94,15 @@ public class Key extends JButton {
 		
 	}
 
+	public void selectionButtonPressed(ActionEvent e) throws MidiUnavailableException {
+		Synthesizer synth = MidiSystem.getSynthesizer();
+		Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
+		MidiChannel[] mc = synth.getChannels();
+		synth.open();
+		synth.loadInstrument(instr[90]);
+		
+		
+	}
 	
 	
 	public void setWIDTH(int x) {
