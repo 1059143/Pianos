@@ -100,6 +100,7 @@ public class Key extends JButton {
 		MidiChannel[] mc = synth.getChannels();
 		synth.open();
 		synth.loadInstrument(instr[90]);
+		mc[5].noteOn(60,600);
 		
 		
 	}

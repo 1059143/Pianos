@@ -41,7 +41,7 @@ public class pianos implements KeyListener {
 		synth.open();
 		MidiChannel[] mc = synth.getChannels();
 		Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
-		synth.loadInstrument(instr[90]);
+		synth.loadInstrument(instr[69]);
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1244, 733);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,7 +54,7 @@ public class pianos implements KeyListener {
 		frame.getContentPane().add(btnC);
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mc[5].noteOn(60,600);
+				mc[20].noteOn(60,600);
 			}
 		});
 		btnC.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
