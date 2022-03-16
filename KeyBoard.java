@@ -11,6 +11,7 @@ public class KeyBoard extends JFrame {
 		this.getContentPane().setLayout(null);
 		for(int i = 0; i <  listOfMajorKeys.length; i++)  {
 			listOfMajorKeys[i] = new Key(this,i);
+			
 		}
 		for(int i = 0; i < listOfMinorKeys.length; i++) {
 			listOfMinorKeys[i] = new mKey(this, i);

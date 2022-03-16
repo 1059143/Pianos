@@ -16,10 +16,11 @@ public class Key extends JButton  {
   private int startPos = 37;
   private String testName = "Brad";
   private int i;
-  private int noteNum = 60;
+  
   
 
   private String[] noteName = { "C", "D", "E", "F", "G", "A", "B" };
+  private int noteNumber = 60;
   
 
   public Key(JFrame KeyBoard, int i) {
@@ -63,7 +64,7 @@ public class Key extends JButton  {
     }
   }
   public void selectionButtonPressed(ActionEvent e){
-    System.out.println("Note Number: " + (this.i + 60));
+    
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
     try {
@@ -77,8 +78,20 @@ public class Key extends JButton  {
     synth.loadInstrument(instr[90]);
     
     System.out.println(e.paramString());
+    if(i%7 == 0 || i%7 == 3 || i % 7 == 1) {
+    	 
+    	mc[5].noteOn(this.i + 60, 600);
+    	System.out.println(this.i + noteNumber);
     
-    mc[5].noteOn(60 + this.i,600);
+    	
+    
+    } else {
+    	
+    	mc[5].noteOn(this.i + (62), 600);
+    	System.out.println(this.i + noteNumber + 2);
+    	
+    }
+    
   }
     catch(Exception ex){
       
