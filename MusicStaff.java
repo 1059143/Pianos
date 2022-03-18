@@ -8,21 +8,27 @@ public class MusicStaff extends JLabel {
     private Font Musical;
     private JFrame frame;
     
+    
 
     public MusicStaff(JFrame KeyBoard) {
         this.frame = KeyBoard;
         try {
-            Musical = Font.createFont(Font.TRUETYPE_FONT, new File("MusiSync.ttf")).deriveFont(60f);
+            this.Musical = Font.createFont(Font.TRUETYPE_FONT, new File("MusiSync.ttf")).deriveFont(60f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("MusiSync.ttf")));
         } catch (IOException | FontFormatException e) {
 
         }
 
-        this.setFont(Musical);
+        this.setFont(this.Musical);
         this.setBackground(Color.WHITE);
         // x,y,width,height
-        this.setBounds(200,567,150,60);
+        this.setBounds(800,400,300,80);
+        this.setText("©©©©");
+        this.setBounds(800,500,400,80);
+        this.setText("©©©©©©");
+        this.frame.getContentPane().add(this);
+        this.setVisible(true);
 
 
 

@@ -14,8 +14,7 @@ public class Key extends JButton  {
   private JFrame frame;
   private int WIDTH = 107;
   private int startPos = 37;
-  private String testName = "Brad";
-  private int i;
+  
   
   
 
@@ -24,7 +23,7 @@ public class Key extends JButton  {
   
 
   public Key(JFrame KeyBoard, int i) {
-	this.i = i;
+	
     this.frame = KeyBoard;
     int noteRemainder = i % this.noteName.length;
     // frame.setBounds(100, 100, 1244, 733);
@@ -35,7 +34,7 @@ public class Key extends JButton  {
     setTheFont(26);
     this.setBounds(getLeft(i, false), 280, 97, 287);
     this.frame.getContentPane().add(this);
-    this.addActionListener(e -> selectionButtonPressed(e));
+    this.addActionListener(e -> selectionButtonPressed(e,i));
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
     this.frame.setVisible(true);
 
@@ -63,7 +62,7 @@ public class Key extends JButton  {
         break;
     }
   }
-  public void selectionButtonPressed(ActionEvent e){
+  public void selectionButtonPressed(ActionEvent e,int i){
     
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
@@ -72,26 +71,21 @@ public class Key extends JButton  {
     Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
     MidiChannel[] mc = synth.getChannels();
 		
-      synth.open();
+    synth.open();
     
     
     synth.loadInstrument(instr[90]);
     
     System.out.println(e.paramString());
-    if(i%7 == 0 || i%7 == 3 || i % 7 == 1) {
-    	 
-    	mc[5].noteOn(this.i + 60, 600);
-    	System.out.println(this.i + noteNumber);
     
-    	
-    
-    } else {
-    	
-    	mc[5].noteOn(this.i + (62), 600);
-    	System.out.println(this.i + noteNumber + 2);
-    	
+    int tmp = i + this.noteNumber;
+    if(i % 7 == 0 ) {
+    	mc[5].noteOn(tmp, 600);
+    } else if (i % 7 != 0) {
+    	mc[5].noteOn(tmp + 1, 600);
+    	System.out.println();
     }
-    
+  
   }
     catch(Exception ex){
       
