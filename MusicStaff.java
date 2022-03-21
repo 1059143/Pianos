@@ -25,8 +25,6 @@ public class MusicStaff extends JLabel {
         // x,y,width,height
         this.setBounds(800,400,300,80);
         this.setText("©©©©");
-        this.setBounds(800,500,400,80);
-        this.setText("©©©©©©");
         this.frame.getContentPane().add(this);
         this.setVisible(true);
 

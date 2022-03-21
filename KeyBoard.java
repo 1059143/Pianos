@@ -18,9 +18,10 @@ public class KeyBoard extends JFrame {
 			listOfMinorKeys[i] = new mKey(this, i);
 		}
 	}
+		
+}
 	
 	// public void setKey(int i) {
 	// 	listOfMajorKeys[i] = new Key(this, i);
 	// 	listOfMinorKeys[i] = new mKey(this, i);
 	// }
-}
