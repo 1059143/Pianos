@@ -34,7 +34,7 @@ public class Key extends JButton  {
     setTheFont(26);
     this.setBounds(getLeft(i, false), 280, 97, 287);
     this.frame.getContentPane().add(this);
-    this.addActionListener(e -> selectionButtonPressed(e,i));
+    this.addActionListener(e -> selectionButtonPressed(e,i,KeyBoard));
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
     this.frame.setVisible(true);
 
@@ -62,7 +62,7 @@ public class Key extends JButton  {
         break;
     }
   }
-  public void selectionButtonPressed(ActionEvent e,int i){
+  public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
     
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
@@ -77,6 +77,9 @@ public class Key extends JButton  {
     synth.loadInstrument(instr[90]);
     
     System.out.println(e.paramString());
+    
+    
+    this.note = new Note(KeyBoard);
     this.note.setVisible(true);
     
     int tmp = i + this.noteNumber;
