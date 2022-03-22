@@ -79,12 +79,14 @@ public class Key extends JButton  {
     System.out.println(e.paramString());
     
     int tmp = i + this.noteNumber;
-    if(i % 7 == 0 ) {
+    if(i % 7 != 0 ) {
+    	mc[5].noteOn(tmp + 2, 600);
+    	System.out.println(tmp + 2);
+    } else {
     	mc[5].noteOn(tmp, 600);
-    } else if (i % 7 != 0) {
-    	mc[5].noteOn(tmp + 1, 600);
-    	System.out.println();
+    	System.out.println(tmp);
     }
+    
   
   }
     catch(Exception ex){
