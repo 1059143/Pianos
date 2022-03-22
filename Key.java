@@ -15,7 +15,7 @@ public class Key extends JButton  {
   private int WIDTH = 107;
   private int startPos = 37;
   
-  
+  private Note note;
   
 
   private String[] noteName = { "C", "D", "E", "F", "G", "A", "B" };
@@ -77,6 +77,7 @@ public class Key extends JButton  {
     synth.loadInstrument(instr[90]);
     
     System.out.println(e.paramString());
+    this.note.setVisible(true);
     
     int tmp = i + this.noteNumber;
     if(i % 7 != 0 ) {

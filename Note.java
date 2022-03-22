@@ -11,8 +11,12 @@ public class Note extends MusicStaff {
 		super(KeyBoard);
 		
 		
-		this.setBounds(NEXT, ABORT, WIDTH, HEIGHT);
+		this.setBounds(850, 400, 200, 80);
+		this.setText("q");
 		this.setVisible(false);
+
+		KeyBoard.getContentPane().add(this);
+	
 		
 		
 	}
