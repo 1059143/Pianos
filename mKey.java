@@ -21,7 +21,7 @@ public class mKey extends Key {
 		
 		setWIDTH(127);
 		
-		
+		note.setText();
 //		if(noteRemainder == 2) {
 //			setWIDTH(177);
 //		} else {
