@@ -79,7 +79,7 @@ public class Key extends JButton  {
     System.out.println(e.paramString());
     
     
-    this.note = new Note(KeyBoard);
+    this.note = new Note(KeyBoard, i);
     this.note.setVisible(true);
     
     int tmp = i + this.noteNumber;
