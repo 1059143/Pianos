@@ -18,49 +18,86 @@ public class Key extends JButton  {
   private Note note;
   
 
-  private String[] noteName = { "C", "D", "E", "F", "G", "A", "B" };
+  private static final String[] noteName = { "C", "C#/D(flat)", "D", "D#/E(flat)", "E", "F", "F#/F(flat)" ,"G", "G#/G(flat)", "A", "A#/B(flat)", "B" };
   private int noteNumber = 60;
   
 
-  public Key(JFrame KeyBoard, int i) {
+  public Key(JFrame KeyBoard, int i, boolean isMinor) {
 	
     this.frame = KeyBoard;
-    int noteRemainder = i % this.noteName.length;
+    int noteRemainder = i % noteName.length;
     // frame.setBounds(100, 100, 1244, 733);
     // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     // frame.getContentPane().setLayout(null);
-    this.backGround = Color.white;
-    this.setBackground(backGround);
-    setTheFont(26);
-    this.setBounds(getLeft(i, false), 280, 97, 287);
+    
+    
+    if(!isMinor) {
+    	this.backGround = Color.white;
+    	this.setBackground(backGround);
+    	setTheFont(26);
+    	this.setBounds(getLeft(i, false), 280, 97, 287);
+    	switch(noteRemainder) {
+    		case 0:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 2:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 4:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 5:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 7:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 9:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 11:
+    			this.setText(noteName[noteRemainder]);
+    			break;    			
+    	}
+    } else if(isMinor) {
+    	setTheFont(13);
+		setBackground(Color.BLACK);
+		setForeground(Color.WHITE);
+		setBounds(getLeft(i, true), 57, 116, 212);
+		switch(noteRemainder) {
+		case 1:
+			this.setText(noteName[noteRemainder]);
+			break;
+		case 3:
+			this.setText(noteName[noteRemainder]);
+			break;
+		case 6:
+			this.setText(noteName[noteRemainder]);
+			break;
+		case 8:
+			this.setText(noteName[noteRemainder]);
+			break;
+		case 10:
+			this.setText(noteName[noteRemainder]);
+			break;
+		   			
+		}
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     this.frame.getContentPane().add(this);
     this.addActionListener(e -> selectionButtonPressed(e,i,KeyBoard));
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
     this.frame.setVisible(true);
 
-    switch (noteRemainder) {
-      case 0:
-        this.setText(noteName[noteRemainder]);
-        break;
-      case 1:
-        this.setText(noteName[noteRemainder]);
-        break;
-      case 2:
-        this.setText(noteName[noteRemainder]);
-        break;
-      case 3:
-        this.setText(noteName[noteRemainder]);
-        break;
-      case 4:
-        this.setText(noteName[noteRemainder]);
-        break;
-      case 5:
-        this.setText(noteName[noteRemainder]);
-        break;
-      case 6:
-        this.setText(noteName[noteRemainder]);
-        break;
-    }
+    
   }
   public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
     
@@ -83,13 +120,11 @@ public class Key extends JButton  {
     this.note.setVisible(true);
     
     int tmp = i + this.noteNumber;
-    if(i % 7 != 0 ) {
-    	mc[5].noteOn(tmp + 2, 600);
-    	System.out.println(tmp + 2);
-    } else {
-    	mc[5].noteOn(tmp, 600);
-    	System.out.println(tmp);
-    }
+    
+    
+    mc[5].noteOn(tmp, 600);
+    System.out.println(tmp);
+   
     
   
   }
