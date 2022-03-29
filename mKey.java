@@ -10,7 +10,7 @@ public class mKey extends Key {
 	public mKey(JFrame KeyBoard, int i) {
 		
 		
-//		super(KeyBoard, i);
+		super(KeyBoard, i);
 		
 		int noteRemainder = i % this.noteName.length;
 		

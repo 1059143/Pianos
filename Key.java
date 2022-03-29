@@ -18,11 +18,11 @@ public class Key extends JButton  {
   private Note note;
   
 
-  private static final String[] noteName = { "C", "C#/D(flat)", "D", "D#/E(flat)", "E", "F", "F#/F(flat)" ,"G", "G#/G(flat)", "A", "A#/B(flat)", "B" };
+  private static final String[] noteName = { "C",  "D", "E", "F" ,"G",  "A",  "B" };
   private int noteNumber = 60;
   
 
-  public Key(JFrame KeyBoard, int i, boolean isMinor) {
+  public Key(JFrame KeyBoard, int i) {
 	
     this.frame = KeyBoard;
     int noteRemainder = i % noteName.length;
@@ -30,9 +30,7 @@ public class Key extends JButton  {
     // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     // frame.getContentPane().setLayout(null);
     
-    
-    if(!isMinor) {
-    	this.backGround = Color.white;
+    this.backGround = Color.white;
     	this.setBackground(backGround);
     	setTheFont(26);
     	this.setBounds(getLeft(i, false), 280, 97, 287);
@@ -40,7 +38,13 @@ public class Key extends JButton  {
     		case 0:
     			this.setText(noteName[noteRemainder]);
     			break;
+    		case 1:
+    			this.setText(noteName[noteRemainder]);
+    			break;
     		case 2:
+    			this.setText(noteName[noteRemainder]);
+    			break;
+    		case 3:
     			this.setText(noteName[noteRemainder]);
     			break;
     		case 4:
@@ -49,46 +53,10 @@ public class Key extends JButton  {
     		case 5:
     			this.setText(noteName[noteRemainder]);
     			break;
-    		case 7:
-    			this.setText(noteName[noteRemainder]);
-    			break;
-    		case 9:
-    			this.setText(noteName[noteRemainder]);
-    			break;
-    		case 11:
+    		case 6:
     			this.setText(noteName[noteRemainder]);
     			break;    			
     	}
-    } else if(isMinor) {
-    	setTheFont(13);
-		setBackground(Color.BLACK);
-		setForeground(Color.WHITE);
-		setBounds(getLeft(i, true), 57, 116, 212);
-		switch(noteRemainder) {
-		case 1:
-			this.setText(noteName[noteRemainder]);
-			break;
-		case 3:
-			this.setText(noteName[noteRemainder]);
-			break;
-		case 6:
-			this.setText(noteName[noteRemainder]);
-			break;
-		case 8:
-			this.setText(noteName[noteRemainder]);
-			break;
-		case 10:
-			this.setText(noteName[noteRemainder]);
-			break;
-		   			
-		}
-    }
-    
-    
-    
-    
-    
-    
     
     
     
@@ -99,7 +67,8 @@ public class Key extends JButton  {
 
     
   }
-  public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
+  
+public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
     
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
