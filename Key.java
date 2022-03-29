@@ -59,7 +59,7 @@ public class Key extends JButton  {
     	}
     
     
-    this.note = new Note(KeyBoard, i, false);
+    this.note = new Note(KeyBoard, i, "q");
     
     
     this.frame.getContentPane().add(this);
@@ -70,7 +70,7 @@ public class Key extends JButton  {
     
   }
   
-public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
+public void selectionButtonPressed(ActionEvent e, int i, JFrame KeyBoard){
     
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
@@ -92,10 +92,16 @@ public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
     
     int tmp = i + this.noteNumber;
     
-    
-    mc[5].noteOn(tmp, 600);
-    System.out.println(tmp);
    
+    	mc[5].noteOn(2 * i + this.noteNumber, 600);
+    	if(i% 7 > 3) {
+    		System.out.println(2 * (i-1) + this.noteNumber + 1);
+    	} else if(i%7 == 3) {
+    		System.out.println(2 * (i-1) + this.noteNumber + 1);
+    	}else {
+    		System.out.println(2 * i + this.noteNumber);
+    	}
+    
     
   
   }

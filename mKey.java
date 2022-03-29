@@ -7,12 +7,18 @@ public class mKey extends Key {
 	
 	private String[] noteName = {"C#/D(flat)", "D#/E(flat)", "F#/G(flat)", "G#/A(flat)", "A#/B(flat)"};
 	
-	private Note note;
+	private final Note note;
 	
 	public mKey(JFrame KeyBoard, int i) {
 		
 		
 		super(KeyBoard, i);
+		
+		this.note = new Note(KeyBoard, i, "B");
+		this.note.setBounds(830, 425 - i * 10, 300, 80);
+		this.note.setText("B");
+		
+		
 		
 		int noteRemainder = i % this.noteName.length;
 		
@@ -53,8 +59,7 @@ public class mKey extends Key {
 				break;
 		}
 		
-		this.note = new Note(KeyBoard, i, true);
-		this.note.setBounds(830, 425 - i * 10, 300, 80);
+	
 		
 		
 		
