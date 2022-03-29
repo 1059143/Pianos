@@ -59,12 +59,14 @@ public class Key extends JButton  {
     	}
     
     
+    this.note = new Note(KeyBoard, i, false);
+    
     
     this.frame.getContentPane().add(this);
     this.addActionListener(e -> selectionButtonPressed(e,i,KeyBoard));
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
     this.frame.setVisible(true);
-
+    
     
   }
   
@@ -85,7 +87,7 @@ public void selectionButtonPressed(ActionEvent e,int i, JFrame KeyBoard){
     System.out.println(e.paramString());
     
     
-    this.note = new Note(KeyBoard, i);
+    
     this.note.setVisible(true);
     
     int tmp = i + this.noteNumber;
