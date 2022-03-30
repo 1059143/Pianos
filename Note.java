@@ -11,7 +11,7 @@ public class Note extends MusicStaff {
 		super(KeyBoard);
 		
 		
-		this.setBounds(850, 425 - i * 10, 300, 80);
+		this.setBounds(850, 375 - i * 10, 300, 80);
 	
 		
 		this.setVisible(false);

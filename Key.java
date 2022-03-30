@@ -72,6 +72,8 @@ public class Key extends JButton {
       Synthesizer synth = MidiSystem.getSynthesizer();
       Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
       MidiChannel[] mc = synth.getChannels();
+      ShortMessage msg = new ShortMessage();
+      
 
       synth.open();
 
@@ -94,6 +96,8 @@ public class Key extends JButton {
           mc[5].noteOn(2 * i + this.noteNumber, 600);
           System.out.println(2 * i + this.noteNumber);
         }
+        
+        
 
         this.note.setBounds(850, 425 - i * 10, 300, 80);
         this.note.setText("q");
@@ -115,8 +119,8 @@ public class Key extends JButton {
           System.out.println(2 * i + 61);
         }
 
-        this.note.setBounds(830, 425 - i * 10, 300, 80);
-        this.note.setText("B");
+        this.note.setBounds(810, 425 - i * 10, 300, 80);
+        this.note.setText("B q");
 
 
 
