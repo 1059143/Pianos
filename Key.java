@@ -55,7 +55,7 @@ public class Key extends JButton {
         break;
     }
 
-    this.note = new Note(KeyBoard, i, "q");
+    this.note = new Note(KeyBoard, i);
 
     this.frame.getContentPane().add(this);
     this.addActionListener(e -> selectionButtonPressed(e, i, KeyBoard, minorKey));
@@ -79,7 +79,7 @@ public class Key extends JButton {
 
       System.out.println(e.paramString());
 
-      this.note.setVisible(true);
+      
 
       int tmp = i + this.noteNumber;
 
@@ -94,6 +94,12 @@ public class Key extends JButton {
           mc[5].noteOn(2 * i + this.noteNumber, 600);
           System.out.println(2 * i + this.noteNumber);
         }
+
+        this.note.setBounds(850, 425 - i * 10, 300, 80);
+        this.note.setText("q");
+
+
+
       } else if (minorKey) {
 
         if (i % 5 == 2) {
@@ -109,7 +115,14 @@ public class Key extends JButton {
           System.out.println(2 * i + 61);
         }
 
+        this.note.setBounds(830, 425 - i * 10, 300, 80);
+        this.note.setText("B");
+
+
+
       }
+
+      this.note.setVisible(true);
 
     } catch (Exception ex) {
 

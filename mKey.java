@@ -14,7 +14,7 @@ public class mKey extends Key {
 		
 		super(KeyBoard, i, minorKey);
 		
-		this.note = new Note(KeyBoard, i, "B");
+		this.note = new Note(KeyBoard, i);
 		this.note.setBounds(830, 425 - i * 10, 300, 80);
 		this.note.setText("B");
 		
