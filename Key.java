@@ -83,7 +83,7 @@ public class Key extends JButton {
 
       int tmp = i + this.noteNumber;
 
-      if(!minorKey) {
+      if (!minorKey) {
         if (i % 7 > 3) {
           mc[5].noteOn(2 * (i - 1) + this.noteNumber + 1, 600);
           System.out.println(2 * (i - 1) + this.noteNumber + 1);
@@ -94,26 +94,22 @@ public class Key extends JButton {
           mc[5].noteOn(2 * i + this.noteNumber, 600);
           System.out.println(2 * i + this.noteNumber);
         }
-      } else if(minorKey) {
+      } else if (minorKey) {
 
+        if (i % 5 == 2) {
+          mc[5].noteOn(2 * (i - 1) + 61 + 3, 600);
 
-        
-        if(i % 5 == 2) {
-          mc[5].noteOn(2 * (i-1) + 61 + 3,600);
+          System.out.println(2 * (i - 1) + 61 + 3);
+        } else if (i % 5 > 2) {
+          mc[5].noteOn(2 * (i - 1) + 61 + 3, 600);
+          System.out.println(2 * (i - 1) + 61 + 3);
 
-          System.out.println(2 * (i-1) + 61 + 3);
-        } else if(i % 5 > 2) {
-          mc[5].noteOn(2 * (i-1) + 61 + 3,600);
-          System.out.println(2 * (i-1) + 61 + 3);
-
-        }else {
-          mc[5].noteOn( 2 * i  + 61,600);
+        } else {
+          mc[5].noteOn(2 * i + 61, 600);
           System.out.println(2 * i + 61);
         }
 
       }
-        
-      
 
     } catch (Exception ex) {
 
