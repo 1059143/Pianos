@@ -36,7 +36,7 @@ public class mKey extends Key {
 //		} 
 		
 //		setStart(79);
-		setBounds(getLeft(i, true), 57, 116, 212);
+		setBounds(getLeft(i, minorKey), 57, 116, 212);
 
 		switch(noteRemainder) {
 			case 0:

@@ -30,7 +30,7 @@ public class Key extends JButton {
     this.backGround = Color.white;
     this.setBackground(backGround);
     setTheFont(26);
-    this.setBounds(getLeft(i, false), 280, 97, 287);
+    this.setBounds(getLeft(i, minorKey), 280, 97, 287);
     switch (noteRemainder) {
       case 0:
         this.setText(noteName[noteRemainder]);
