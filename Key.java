@@ -72,12 +72,17 @@ public class Key extends JButton {
       Synthesizer synth = MidiSystem.getSynthesizer();
       Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
       MidiChannel[] mc = synth.getChannels();
+      
+      
       ShortMessage msg = new ShortMessage();
       
 
       synth.open();
 
       synth.loadInstrument(instr[90]);
+      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 0, 0, 0);
+      synth.getReceiver().send(msg, -1);
+      
 
       System.out.println(e.paramString());
 
