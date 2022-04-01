@@ -80,7 +80,7 @@ public class Key extends JButton {
       synth.open();
 
       synth.loadInstrument(instr[90]);
-      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 0, 0, 0);
+      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 5, 10, 2);
       synth.getReceiver().send(msg, -1);
       
 
