@@ -22,6 +22,8 @@ public class Instrument extends JButton {
 		this.frame = KeyBoard;
 		String x = JOptionPane.showInputDialog("Pick a number from 0 to 128");
 		this.instru = Integer.parseInt(x);
+		this.setBounds(instru, instru, instru, instru);
+		this.frame.getContentPane().add(this);
 		
 		
 	}
