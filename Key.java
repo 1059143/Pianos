@@ -1,4 +1,5 @@
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -70,7 +71,7 @@ public class Key extends JButton {
     // TODO: this should be moved back to the piano at some point...
     try {
       Synthesizer synth = MidiSystem.getSynthesizer();
-      Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
+      javax.sound.midi.Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
       MidiChannel[] mc = synth.getChannels();
       
       
@@ -80,7 +81,7 @@ public class Key extends JButton {
       synth.open();
 
       synth.loadInstrument(instr[90]);
-      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 5, 115, 0);
+      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 5, 30, 0);
       synth.getReceiver().send(msg, -1);
       
 
