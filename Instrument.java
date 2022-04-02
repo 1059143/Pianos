@@ -24,6 +24,7 @@ public class Instrument extends JButton {
 		this.instru = Integer.parseInt(x);
 		this.setBounds(instru, instru, instru, instru);
 		this.frame.getContentPane().add(this);
+		this.setVisible(true);
 		
 		
 	}
