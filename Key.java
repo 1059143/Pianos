@@ -16,13 +16,16 @@ public class Key extends JButton {
   private int startPos = 37;
 
   private Note note;
+  private Instrument change;
 
   private static final String[] noteName = { "C", "D", "E", "F", "G", "A", "B" };
   private int noteNumber = 60;
 
-  public Key(JFrame KeyBoard, int i, boolean minorKey) {
+
+  public Key(JFrame KeyBoard, int i, boolean minorKey, Instrument changeInstr) {
 
     this.frame = KeyBoard;
+    this.change = changeInstr;
     int noteRemainder = i % noteName.length;
     // frame.setBounds(100, 100, 1244, 733);
     // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,7 +84,8 @@ public class Key extends JButton {
       synth.open();
 
       synth.loadInstrument(instr[90]);
-      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 5, 30, 0);
+      msg.setMessage(ShortMessage.PROGRAM_CHANGE, 5, this.change.getInstr(), 0);
+      
       synth.getReceiver().send(msg, -1);
       
 
@@ -89,7 +93,7 @@ public class Key extends JButton {
 
       
 
-      int tmp = i + this.noteNumber;
+      
 
       if (!minorKey) {
         if (i % 7 > 3) {
@@ -114,15 +118,19 @@ public class Key extends JButton {
 
         if (i % 5 == 2) {
           mc[5].noteOn(2 * (i - 1) + 61 + 3, 600);
-
           System.out.println(2 * (i - 1) + 61 + 3);
+
+
         } else if (i % 5 > 2) {
+
           mc[5].noteOn(2 * (i - 1) + 61 + 3, 600);
           System.out.println(2 * (i - 1) + 61 + 3);
 
         } else {
+
           mc[5].noteOn(2 * i + 61, 600);
           System.out.println(2 * i + 61);
+
         }
 
         this.note.setBounds(810, 425 - i * 10, 300, 80);

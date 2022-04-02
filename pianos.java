@@ -40,7 +40,7 @@ public class pianos implements KeyListener {
 		Synthesizer synth = MidiSystem.getSynthesizer();
 		synth.open();
 		MidiChannel[] mc = synth.getChannels();
-		Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
+		javax.sound.midi.Instrument[] instr = synth.getDefaultSoundbank().getInstruments();
 		synth.loadInstrument(instr[69]);
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1244, 733);

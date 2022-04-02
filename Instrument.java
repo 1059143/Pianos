@@ -2,6 +2,8 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 
@@ -13,24 +15,34 @@ import java.awt.*;
 
 public class Instrument extends JButton {
 	
-	private int instru;
+	private int instru = 0;
 	
 	private JFrame frame;
 	
 	public Instrument(JFrame KeyBoard) {
 		
 		this.frame = KeyBoard;
-		String x = JOptionPane.showInputDialog("Pick a number from 0 to 128");
-		this.instru = Integer.parseInt(x);
-		this.setBounds(instru, instru, instru, instru);
+		
+		
+		this.setBounds(900, 400, 100, 60);
+		this.setFont(new Font("Tahoma", Font.PLAIN, 12));
+
+		
+		this.setText("Change Instrument?");
+
+		this.addActionListener(e -> selectionButtonPressed(e));
 		this.frame.getContentPane().add(this);
 		this.setVisible(true);
 		
-		
+	}
+
+	public  void selectionButtonPressed(ActionEvent e) {
+		String x = JOptionPane.showInputDialog("Pick a number from 0 to 128");
+		this.instru = Integer.parseInt(x);
 	}
 	
 	
-	private int getInstr() {
+	public int getInstr() {
 		return this.instru;
 	}
 }

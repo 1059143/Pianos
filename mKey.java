@@ -9,10 +9,10 @@ public class mKey extends Key {
 	
 	private final Note note;
 	
-	public mKey(JFrame KeyBoard, int i, boolean minorKey) {
+	public mKey(JFrame KeyBoard, int i, boolean minorKey, Instrument change) {
 		
 		
-		super(KeyBoard, i, minorKey);
+		super(KeyBoard, i, minorKey, change);
 		
 		this.note = new Note(KeyBoard, i);
 		this.note.setBounds(830, 425 - i * 10, 300, 80);
