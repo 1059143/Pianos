@@ -24,7 +24,7 @@ public class Instrument extends JButton {
 		this.frame = KeyBoard;
 		
 		
-		this.setBounds(900, 400, 100, 60);
+		this.setBounds(900, 200, 150, 60);
 		this.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		

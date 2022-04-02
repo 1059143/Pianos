@@ -29,13 +29,13 @@ public class mKey extends Key {
 		
 		setWIDTH(127);
 	
-//		if(noteRemainder == 2) {
-//			setWIDTH(177);
-//		} else {
-//			setWIDTH(127);
-//		} 
-		
-//		setStart(79);
+		//		if(noteRemainder == 2) {
+		//			setWIDTH(177);
+		//		} else {
+		//			setWIDTH(127);
+		//		} 
+				
+		//		setStart(79);
 		setBounds(getLeft(i, minorKey), 57, 116, 212);
 
 		switch(noteRemainder) {
