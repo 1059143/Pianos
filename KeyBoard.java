@@ -1,4 +1,6 @@
 import javax.swing.*;
+//			listOfMajorKeys[i] = new Key(this,i);
+//			
 
 public class KeyBoard extends JFrame {
 	
@@ -22,8 +24,6 @@ public class KeyBoard extends JFrame {
 		}
 		
 //		for(int i = 0; i <  listOfMajorKeys.length; i++)  {
-//			listOfMajorKeys[i] = new Key(this,i);
-//			
 //		}
 		
 		
