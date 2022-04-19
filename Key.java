@@ -69,7 +69,7 @@ public class Key extends JButton {
   }
 
   public void selectionButtonPressed(ActionEvent e, int i, JFrame KeyBoard, boolean minorKey) {
-
+	boolean isVisible =  true;
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
     try {
@@ -109,7 +109,7 @@ public class Key extends JButton {
         
         
 
-        this.note.setBounds(850, 427 - i * 9, 300, 80);
+        this.note.setBounds(850, 425 - i * 8, 300, 80);
         this.note.setText("q");
 
 
@@ -140,7 +140,14 @@ public class Key extends JButton {
 
       }
 
-      this.note.setVisible(true);
+      this.note.setVisible(isVisible);
+      
+      if(isVisible) {
+    	  Thread.sleep(500);
+    	  isVisible = false;
+    	  this.note.setVisible(!isVisible);
+      }
+      
 
     } catch (Exception ex) {
 

@@ -29,8 +29,7 @@ public class MusicStaff extends JLabel {
         this.setVisible(true);
 
 
-
-
-
     }
+    
+
 }

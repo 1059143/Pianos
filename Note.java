@@ -1,18 +1,28 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 
-public class Note extends MusicStaff {
+public class Note extends JLabel {
 	
+	private Font Musical;
 	
 	public Note(JFrame KeyBoard, int i) {
 		
 		
-		super(KeyBoard);
-		
-		
-//		this.setBounds(850, 375 - i * 10, 300, 80);
 	
+	     try {
+	            this.Musical = Font.createFont(Font.TRUETYPE_FONT, new File("MusiSync.ttf")).deriveFont(70f);
+	            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+	            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("MusiSync.ttf")));
+	        } catch (IOException | FontFormatException e) {
+
+	        }
+	
+
+	    this.setFont(this.Musical);
+	    this.setBackground(Color.WHITE);
 		
 		this.setVisible(false);
 		
