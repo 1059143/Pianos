@@ -1,5 +1,6 @@
 import java.awt.*;
 
+import java.util.concurrent.TimeUnit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -24,6 +25,7 @@ public class Key extends JButton {
 
   public Key(JFrame KeyBoard, int i, boolean minorKey, Instrument changeInstr) {
 
+	
     this.frame = KeyBoard;
     this.change = changeInstr;
     int noteRemainder = i % noteName.length;
@@ -64,12 +66,16 @@ public class Key extends JButton {
     this.frame.getContentPane().add(this);
     this.addActionListener(e -> selectionButtonPressed(e, i, KeyBoard, minorKey));
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
+
+    
     this.frame.setVisible(true);
+   
+    
 
   }
 
   public void selectionButtonPressed(ActionEvent e, int i, JFrame KeyBoard, boolean minorKey) {
-	boolean isVisible =  true;
+	
     // Setting up the instrument..
     // TODO: this should be moved back to the piano at some point...
     try {
@@ -109,7 +115,7 @@ public class Key extends JButton {
         
         
 
-        this.note.setBounds(850, 425 - i * 8, 300, 80);
+        this.note.setBounds(850, 426 - i * 8, 300, 80);
         this.note.setText("q");
 
 
@@ -140,13 +146,11 @@ public class Key extends JButton {
 
       }
 
-      this.note.setVisible(isVisible);
+      this.note.setVisible(true);
       
-      if(isVisible) {
-    	  Thread.sleep(500);
-    	  isVisible = false;
-    	  this.note.setVisible(!isVisible);
-      }
+      this.note.setVisible(isItVisible(false));
+      
+  
       
 
     } catch (Exception ex) {
@@ -188,6 +192,27 @@ public class Key extends JButton {
 
   public void setTheFont(int x) {
     this.setFont(new Font("Tahoma", Font.PLAIN, x));
+  }
+  
+  private boolean isItVisible(boolean x)  {
+	  
+	  try {
+		TimeUnit.SECONDS.sleep((long) 0.5);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		Thread.currentThread().interrupt();
+	}
+	  
+//	  try
+//	    {
+//	        Thread.sleep(500);
+//	    }
+//	    catch(InterruptedException ex)
+//	    {
+//	        Thread.currentThread().interrupt();
+//	    }
+	  
+	  return x;
   }
 
 }
