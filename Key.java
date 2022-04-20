@@ -148,7 +148,7 @@ public class Key extends JButton {
 
       this.note.setVisible(true);
       
-      this.note.setVisible(isItVisible(false));
+//      this.note.setVisible(isItVisible(false));
       
   
       
