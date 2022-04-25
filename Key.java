@@ -65,6 +65,8 @@ public class Key extends JButton {
 
     this.frame.getContentPane().add(this);
     this.addActionListener(e -> selectionButtonPressed(e, i, KeyBoard, minorKey));
+   
+    
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
 
     
