@@ -23,6 +23,7 @@ public class Note extends JLabel {
 
 	    this.setFont(this.Musical);
 	    this.setBackground(Color.WHITE);
+	    this.setText("q");
 		
 		this.setVisible(false);
 		

@@ -118,7 +118,7 @@ public class Key extends JButton {
         
 
         this.note.setBounds(880, 426 - i * 8, 300, 80);
-        this.note.setText("q");
+    
 
 
 
