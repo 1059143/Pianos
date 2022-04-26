@@ -65,12 +65,15 @@ public class Key extends JButton {
 
     this.frame.getContentPane().add(this);
     this.addActionListener(e -> selectionButtonPressed(e, i, KeyBoard, minorKey));
+    
    
     
     this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
 
     
     this.frame.setVisible(true);
+    
+    
    
     
 
@@ -117,7 +120,7 @@ public class Key extends JButton {
         
         
 
-        this.note.setBounds(880, 426 - i * 8, 300, 80);
+        this.note.setBounds(915, 426 - i * 8, 300, 80);
     
 
 
@@ -141,7 +144,7 @@ public class Key extends JButton {
 
         }
 
-        this.note.setBounds(810, 427 - i * 9, 300, 80);
+        this.note.setBounds(880, 426 - i * 8, 300, 80);
         this.note.setText("B q");
 
 
@@ -149,16 +152,24 @@ public class Key extends JButton {
       }
 
       this.note.setVisible(true);
+	  
       
-//      this.note.setVisible(isItVisible(false));
+      
+      
+      
       
   
       
 
     } catch (Exception ex) {
 
+    
+    
     }
+    
   }
+  
+  
 
   // Action aa = new AbstractAction()
   // {
@@ -198,12 +209,8 @@ public class Key extends JButton {
   
   private boolean isItVisible(boolean x)  {
 	  
-	  try {
-		TimeUnit.SECONDS.sleep((long) 0.5);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		Thread.currentThread().interrupt();
-	}
+	
+	  
 	  
 //	  try
 //	    {
