@@ -16,6 +16,7 @@ public class Instrument extends JButton {
 
 		this.setBounds(900, 200, 150, 60);
 		this.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		this.setBackground(Color.WHITE);
 
 		this.setText("Change Instrument?");
 
