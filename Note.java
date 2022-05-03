@@ -6,6 +6,7 @@ import java.io.IOException;
 public class Note extends JLabel {
 
 	private Font Musical;
+	private float alpha;
 
 	public Note(JFrame KeyBoard, int i) {
 
@@ -25,6 +26,20 @@ public class Note extends JLabel {
 
 		KeyBoard.getContentPane().add(this);
 
+	}
+
+	public void setAlpha(float value){
+		if(this.alpha != value){
+			float old = this.alpha;
+			this.alpha = value;
+			firePropertyChange("alpha", old, alpha);
+			repaint();
+
+		}
+	}
+
+	public float getAlpha(){
+		return alpha;
 	}
 
 }
