@@ -23,7 +23,7 @@ public class Note extends JLabel {
 		this.setBackground(Color.WHITE);
 		this.setText("q");
 
-		Timer noteTime = new Timer(4000, a -> timerForNote(a));
+		Timer noteTime = new Timer(3250, a -> timerForNote(a));
 		noteTime.start();
 		this.setVisible(false);
 
