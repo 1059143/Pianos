@@ -63,11 +63,25 @@ public class Key extends JButton {
 
 		this.frame.getContentPane().add(this);
 		this.addActionListener(e -> selectionButtonPressed(e, i, KeyBoard, minorKey));
-
+		
+		Timer noteTime = new Timer(4000, a -> timerForNote(a));
+		noteTime.start();
+		
+//		Timer noteTime = new Timer(2500, e -> timerForNote(e));
+//		noteTime.start();
 		this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_C, 0), "C");
+		
+		
+		
+		
 
 		this.frame.setVisible(true);
+		
 
+	}
+	
+	public void timerForNote(ActionEvent a) {
+		this.note.setVisible(false);
 	}
 
 	public void selectionButtonPressed(ActionEvent e, int i, JFrame KeyBoard, boolean minorKey) {
@@ -128,6 +142,8 @@ public class Key extends JButton {
 			}
 
 			this.note.setVisible(true);
+			
+			
 
 		} catch (Exception ex) {
 
