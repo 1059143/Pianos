@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -22,14 +23,20 @@ public class Note extends JLabel {
 		this.setBackground(Color.WHITE);
 		this.setText("q");
 
+		Timer noteTime = new Timer(4000, a -> timerForNote(a));
+		noteTime.start();
 		this.setVisible(false);
 
 		KeyBoard.getContentPane().add(this);
 
 	}
 
-	public void setAlpha(float value){
-		if(this.alpha != value){
+	public void timerForNote(ActionEvent a) {
+		this.setVisible(false);
+	}
+
+	public void setAlpha(float value) {
+		if (this.alpha != value) {
 			float old = this.alpha;
 			this.alpha = value;
 			firePropertyChange("alpha", old, alpha);
@@ -38,7 +45,7 @@ public class Note extends JLabel {
 		}
 	}
 
-	public float getAlpha(){
+	public float getAlpha() {
 		return alpha;
 	}
 
