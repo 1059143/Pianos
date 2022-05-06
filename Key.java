@@ -18,6 +18,7 @@ public class Key extends JButton {
 
 	private Note note;
 	private Instrument change;
+	private Note middleN;
 
 	private static final String[] noteName = { "C", "D", "E", "F", "G", "A", "B" };
 	private int noteNumber = 60;
@@ -60,6 +61,8 @@ public class Key extends JButton {
 		}
 
 		this.note = new Note(KeyBoard, i);
+		this.middleN = new Note(KeyBoard , i);
+		
 
 		this.frame.getContentPane().add(this);
 		this.addActionListener(e -> selectionButtonPressed(e, i, KeyBoard, minorKey));
@@ -105,7 +108,8 @@ public class Key extends JButton {
 					mc[5].noteOn(2 * i + this.noteNumber, 600);
 					System.out.println(2 * i + this.noteNumber);
 				}
-
+				this.middleN.setBounds(910,429,300,80);
+				this.middleN.setText("--");
 				this.note.setBounds(915, 426 - i * 8, 300, 80);
 
 			} else if (minorKey) {
@@ -130,7 +134,9 @@ public class Key extends JButton {
 				this.note.setText("B q");
 
 			}
-
+			if( i == 0) {
+				this.middleN.setVisible(true);
+			}
 			this.note.setVisible(true);
 
 		} catch (Exception ex) {
