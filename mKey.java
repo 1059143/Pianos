@@ -14,8 +14,8 @@ public class mKey extends Key {
 		super(KeyBoard, i, minorKey, change);
 
 		this.note = new Note(KeyBoard, i);
-		this.note.setBounds(830, 425 - i * 10, 300, 80);
-		this.note.setText("B");
+//		this.note.setBounds(830, 425 - i * 10, 300, 80);
+//		this.note.setText("B");
 
 		int noteRemainder = i % this.noteName.length;
 
