@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 //			listOfMajorKeys[i] = new Key(this,i);
 //			
 
@@ -14,6 +15,7 @@ public class KeyBoard extends JFrame {
 		this.setBounds(100, 100, 1244, 733);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setLayout(null);
+		this.getContentPane().setBackground(Color.WHITE);
 
 		for (int i = 0; i < listOfMajorKeys.length; i++) {
 			listOfMajorKeys[i] = new Key(this, i, false, this.change);

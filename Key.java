@@ -127,6 +127,9 @@ public class Key extends JButton {
 
 					mc[5].noteOn(2 * i + 61, 600);
 					System.out.println(2 * i + 61);
+					this.middleN.setBounds(910,429,300,80);
+					this.middleN.setText("--");
+					
 
 				}
 
