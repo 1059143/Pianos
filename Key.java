@@ -113,18 +113,21 @@ public class Key extends JButton {
 				this.note.setBounds(915, 426 - i * 8, 300, 80);
 
 			} else if (minorKey) {
+				this.note.setText("B q");
 
 				if (i % 5 == 2) {
+					this.note.setBounds(880, 418 - i * 8, 300, 80);
 					mc[5].noteOn(2 * (i - 1) + 61 + 3, 600);
 					System.out.println(2 * (i - 1) + 61 + 3);
 
 				} else if (i % 5 > 2) {
-
+					this.note.setBounds(880, 418 - i * 8, 300, 80);
 					mc[5].noteOn(2 * (i - 1) + 61 + 3, 600);
 					System.out.println(2 * (i - 1) + 61 + 3);
 
 				} else {
-
+					this.note.setBounds(880, 426 - i * 8, 300, 80);
+					
 					mc[5].noteOn(2 * i + 61, 600);
 					System.out.println(2 * i + 61);
 					this.middleN.setBounds(910,429,300,80);
@@ -133,8 +136,7 @@ public class Key extends JButton {
 
 				}
 
-				this.note.setBounds(880, 426 - i * 8, 300, 80);
-				this.note.setText("B q");
+				
 
 			}
 			if( i == 0) {
