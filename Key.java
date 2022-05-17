@@ -13,7 +13,7 @@ public class Key extends JButton {
 	private Color backGround, foreGround;
 	private boolean isMinor;
 	private JFrame frame;
-	private int WIDTH = 107;
+	private int WIDTH = 85;
 	private int startPos = 37;
 
 	private Note note;
@@ -35,7 +35,7 @@ public class Key extends JButton {
 		this.backGround = Color.white;
 		this.setBackground(backGround);
 		setTheFont(26);
-		this.setBounds(getLeft(i, minorKey), 280, 97, 287);
+		this.setBounds(getLeft(i, minorKey), 65, 97, 500);
 		switch (noteRemainder) {
 		case 0:
 			this.setText(noteName[noteRemainder]);
@@ -139,6 +139,7 @@ public class Key extends JButton {
 				this.middleN.setVisible(true);
 			}
 			this.note.setVisible(true);
+			
 
 		} catch (Exception ex) {
 
@@ -159,14 +160,14 @@ public class Key extends JButton {
 
 	public int getLeft(int i, boolean isMinor) {
 		if (!isMinor) {
-			return this.startPos + i * this.WIDTH;
+			return this.startPos + i * 95;
 
 		} else if (isMinor) {
-			this.startPos = 79;
+			this.startPos = 85;
 			if (i % 5 > 1) {
-				return this.startPos + (i - 1) * this.WIDTH + 177;
+				return this.startPos + (i - 1) * 80 + 130;
 			} else {
-				return this.startPos + i * this.WIDTH;
+				return this.startPos + i * 110;
 			}
 
 		}
