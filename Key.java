@@ -35,7 +35,7 @@ public class Key extends JButton {
 		this.backGround = Color.white;
 		this.setBackground(backGround);
 		setTheFont(26);
-		this.setBounds(getLeft(i, minorKey), 65, 97, 500);
+		this.setBounds(getLeft(i, minorKey), 65, 86, 500);
 		switch (noteRemainder) {
 		case 0:
 			this.setText(noteName[noteRemainder]);
@@ -160,14 +160,14 @@ public class Key extends JButton {
 
 	public int getLeft(int i, boolean isMinor) {
 		if (!isMinor) {
-			return this.startPos + i * 95;
+			return this.startPos + i * 85;
 
 		} else if (isMinor) {
 			this.startPos = 85;
 			if (i % 5 > 1) {
-				return this.startPos + (i - 1) * 80 + 130;
+				return this.startPos + (i - 1) * 75 + 195;
 			} else {
-				return this.startPos + i * 110;
+				return this.startPos + i * 100;
 			}
 
 		}
