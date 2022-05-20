@@ -162,6 +162,8 @@ public class Key extends JButton {
 			return this.startPos + i * 85;
 
 		} else if (isMinor) {
+			
+			
 			this.startPos = 90;
 			if (i % 5 > 1) {
 				return this.startPos + (i-1) * 85 + 170;
