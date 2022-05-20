@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class KeyBoard extends JFrame {
 
-	private Key[] listOfMajorKeys = new Key[7];
-	private mKey[] listOfMinorKeys = new mKey[5];
+	private Key[] listOfMajorKeys = new Key[9];
+	private mKey[] listOfMinorKeys = new mKey[7];
 
 	private MusicStaff staff = new MusicStaff(this);
 	private Instrument change = new Instrument(this);
@@ -31,7 +31,7 @@ public class KeyBoard extends JFrame {
 		
 
 //		for(int i = 0; i <  listOfMajorKeys.length; i++)  {
-//		}
+//		}l
 
 	}
 

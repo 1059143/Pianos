@@ -139,7 +139,6 @@ public class Key extends JButton {
 				this.middleN.setVisible(true);
 			}
 			this.note.setVisible(true);
-			
 
 		} catch (Exception ex) {
 
@@ -163,11 +162,16 @@ public class Key extends JButton {
 			return this.startPos + i * 85;
 
 		} else if (isMinor) {
-			this.startPos = 85;
+			this.startPos = 90;
 			if (i % 5 > 1) {
-				return this.startPos + (i - 1) * 75 + 195;
+				return this.startPos + (i-1) * 85 + 170;
+				
+				
+				
+			} else if( i % 5 == 0 && i > 0 ){
+				return this.startPos + (i-1) * 85 + 255;
 			} else {
-				return this.startPos + i * 100;
+				return this.startPos + i * 85;
 			}
 
 		}
