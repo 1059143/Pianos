@@ -21,7 +21,7 @@ public class MusicStaff extends JLabel {
 		this.setFont(this.Musical);
 		this.setBackground(Color.WHITE);
 		// x,y,width,height
-		this.setBounds(800, 400, 300, 80);
+		this.setBounds(810, 400, 300, 80);
 		this.setText("g¨›››®"); //
 		this.frame.getContentPane().add(this);
 		this.setVisible(true);
