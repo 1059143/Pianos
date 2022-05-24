@@ -186,18 +186,6 @@ public class Key extends JButton {
 		this.setFont(new Font("Tahoma", Font.PLAIN, x));
 	}
 
-	private boolean isItVisible(boolean x) {
 
-//	  try
-//	    {
-//	        Thread.sleep(500);
-//	    }
-//	    catch(InterruptedException ex)
-//	    {
-//	        Thread.currentThread().interrupt();
-//	    }
-
-		return x;
-	}
 
 }
