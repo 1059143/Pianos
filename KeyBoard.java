@@ -6,7 +6,7 @@ import java.awt.*;
 public class KeyBoard extends JFrame {
 
 	private Key[] listOfMajorKeys = new Key[9];
-	private mKey[] listOfMinorKeys = new mKey[6];
+	private mKey[] listOfMinorKeys = new mKey[8];
 
 	private MusicStaff staff = new MusicStaff(this);
 	private Instrument change = new Instrument(this);
